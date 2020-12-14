@@ -10,23 +10,25 @@ import { StoreModule } from '@ngrx/store';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
-import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
     AngularFireModule.initializeApp(environment.firebase.config),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
